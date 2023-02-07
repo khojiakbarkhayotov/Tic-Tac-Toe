@@ -1,0 +1,132 @@
+:root {
+  --lime-color: #a3e635;
+  --grey-color: #a3a3a3;
+  --logo-color: #134e4a;
+  --font-family: "Patua One", cursive;
+  --main-border: 3px solid var(--logo-color);
+  --padding-big: 0.5rem;
+  font-size: 62.5px;
+}
+
+* {
+  margin: 0;
+  font-family: var(--font-family);
+}
+
+.container {
+  height: 100vh;
+  /* background-color: var(--lime-color); */
+}
+
+header {
+  background-color: #a3e635;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  padding: 2%;
+  border-bottom: var(--main-border);
+}
+
+.logo {
+  color: var(--logo-color);
+  font-size: 1.3em;
+}
+
+.gameBoard {
+  padding: 3%;
+  background-color: var(--grey-color);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  gap: 3vh;
+  align-items: center;
+}
+
+.msg {
+  font-size: 0.6em;
+  font-weight: 100;
+}
+
+.contain {
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: var(--main-border);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1px;
+  padding: 1px;
+}
+
+.item {
+  border: 1.5px solid black;
+  padding: var(--padding-big);
+  cursor: pointer;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+}
+
+.item:hover {
+  background-color: var(--grey-color);
+}
+
+.reset {
+  font-size: 0.7em;
+  border-radius: 10px;
+  padding: 0.5% 2%;
+  font-weight: 100;
+  background-color: var(--lime-color);
+  border: var(--main-border);
+  cursor: pointer;
+}
+
+.reset:hover {
+  background-color: #84cc16;
+}
+.footer {
+  padding-top: 15%;
+  background-color: var(--grey-color);
+  display: inline-flexbox;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.4em;
+  gap: 1%;
+  white-space: wrap;
+  text-align: center;
+}
+
+.footer span {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.git {
+  /* padding: %; */
+  position: relative;
+  text-align: center;
+  width: 1em;
+  cursor: pointer;
+}
+
+.git:hover {
+  width: 1.3em;
+  transform: rotate(360deg);
+  transition: width 0.5s, transform 0.5s;
+}
+
+@media (max-width: 400px) {
+  * {
+    font-size: 40px;
+  }
+  .footer > span,
+  .git {
+    font-size: 20px;
+  }
+}
