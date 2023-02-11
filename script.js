@@ -53,6 +53,14 @@ const controlItems = function () {
       });
       return;
     }
+    if (count === 9 && !(checkX || checkO)) {
+      message.style.color = "#a3e635";
+      message.textContent = `It is a Draw!`;
+      [...items].forEach((item) => {
+        removeListener(item);
+      });
+      return;
+    }
     message.textContent = `Player ${count % 2 === 1 ? "O" : "X"}'s Turn`;
     count++;
   };
