@@ -8,17 +8,27 @@
   font-size: 62.5px;
 }
 
+button {
+  color: black;
+}
+
 * {
   margin: 0;
   font-family: var(--font-family);
 }
 
 .container {
-  height: 100vh;
-  /* background-color: var(--lime-color); */
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--grey-color);
+  width: 100%;
 }
 
 header {
+  width: calc(100% - 4%);
   background-color: #a3e635;
   display: flex;
   justify-content: center;
@@ -35,6 +45,7 @@ header {
 
 .gameBoard {
   padding: 3%;
+  width: calc(100% - 6%);
   background-color: var(--grey-color);
   display: flex;
   flex-flow: column nowrap;
@@ -88,42 +99,52 @@ header {
   background-color: #84cc16;
 }
 .footer {
-  padding-top: 15%;
   background-color: var(--grey-color);
-  display: inline-flexbox;
-  flex-flow: row wrap;
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-size: 0.4em;
   gap: 1%;
-  white-space: wrap;
-  text-align: center;
+  padding: 2% 0;
+  /* white-space: wrap; */
 }
 
 .footer span {
-  text-align: center;
+  align-items: center;
   text-decoration: none;
   color: black;
-  text-align: center;
 }
 
 .git {
-  /* padding: %; */
-  position: relative;
-  text-align: center;
+  padding: 0.15em;
+  /* text-align: center; */
   width: 1em;
   cursor: pointer;
 }
 
 .git:hover {
   width: 1.3em;
+  padding: 0;
   transform: rotate(360deg);
-  transition: width 0.5s, transform 0.5s;
+  transition: all 0.5s;
 }
 
 @media (max-width: 400px) {
   * {
     font-size: 40px;
+  }
+  .footer > span,
+  .git {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 300px) {
+  * {
+    font-size: 30px;
   }
   .footer > span,
   .git {
